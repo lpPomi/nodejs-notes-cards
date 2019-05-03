@@ -6,8 +6,8 @@ const express = require ('express');
 const router = express.Router();
 
 // define the routes
-router.get('/about', (req, res) => {
-    res.send('About');
+router.get('/notes', (req, res) => {
+    res.send('Notas de la database');
   });
 
 // export the router

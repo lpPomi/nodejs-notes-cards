@@ -19,6 +19,9 @@ const methodOverride = require('method-override');
 const session = require('express-session');
 
 
+// Initializations
+require('./database');
+
 
 
 
@@ -65,8 +68,14 @@ app.use(session({
   }));
 
 
-  // Routes
+// Routes
 // tell the server, that here are the routes
 app.use(require('./routes/index'));
 app.use(require('./routes/notes'));
 app.use(require('./routes/users'));
+
+
+// static files
+// define where is the public folder
+app.use(express.static(path.join(__dirname, 'public')));
+
