@@ -11,5 +11,11 @@ router.get('/', (req, res) => {
   });
 
   
+  router.get('/about', (req, res) => {
+    res.send('About');
+  });
+
+
+
 // export the router
 module.exports = router;
