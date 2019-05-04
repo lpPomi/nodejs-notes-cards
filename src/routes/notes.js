@@ -1,5 +1,4 @@
   /*
-  
   Attention: the routing to the files index.hbs and / or 
   about.hbs only work through the layout hbs file 
   ../src/views/layouts/main.hbs
@@ -34,7 +33,6 @@ router.post('/notes/new-note' , (req, res) => {
 });
 
 
-
 // test define the route notes
 /*
 router.get('/notes', (req, res) => {
@@ -42,7 +40,6 @@ router.get('/notes', (req, res) => {
   });
 
 */
-
 
 // export the router
 module.exports = router;
