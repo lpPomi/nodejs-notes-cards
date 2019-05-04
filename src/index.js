@@ -1,8 +1,8 @@
-
 // to use express server
 const express = require ('express');
 
 // Initializations
+
 // create an instance for express
 const app = express();
 
@@ -23,13 +23,14 @@ const session = require('express-session');
 require('./database');
 
 
-
-
 // Settings for the configurations
 app.set('port', process.env.PORT || 3000);
 
-// define where the view are ... lies under src/ folder
-// otherwise default under NOTES-APP
+/* define where the view are ... 
+   lies under src/ folder
+   otherwise default under NOTES-APP
+*/
+
 app.set('views', path.join(__dirname, 'views'));
 
 // Server listering
@@ -50,8 +51,8 @@ app.engine('.hbs', exphbs({
 app.set('view engine', '.hbs');
 
 
-/* Middelwware: define functions that are executed before they arrive at the backend server
-   or functions that are executed before they arrive at the backend server
+/* Middelwware: define functions that are executed before they arrive at
+   the backend server or functions that are executed before they arrive at the backend server
 */
 
 // to get data from a formular but only data email, password ... no images or so what
@@ -59,8 +60,6 @@ app.use(express.urlencoded({extended: false}));
 
 // we achieved here that the form can send all methods put, delete, get and post
 app.use(methodOverride('_method'));
-
-
 
 // to authenticate the user in a session
 app.use(session({
@@ -70,13 +69,17 @@ app.use(session({
   }));
 
 
-// Routes
-// tell the server, that here are the routes
+/* routes
+   tell the server, that here are the routes
+*/ 
 app.use(require('./routes/index'));
 app.use(require('./routes/notes'));
 app.use(require('./routes/users'));
 
 
-// static files
-// define where is the public folder
+/* static files 
+   define where is the public folder
+   here we can save css files , js files etc.
+*/
+
 app.use(express.static(path.join(__dirname, 'public')));
