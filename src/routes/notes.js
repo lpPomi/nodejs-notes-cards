@@ -1,3 +1,15 @@
+  /*
+  
+  Attention: the routing to the files index.hbs and / or 
+  about.hbs only work through the layout hbs file 
+  ../src/views/layouts/main.hbs
+
+  main.hbs is the start point to show hbs files
+
+  define in the main index.js
+  layoutsDir: path.join(app.get('views'), 'layouts'),
+  */
+
 // method Router to create the routes
 // so
 //const router = require('express').Router();

@@ -28,7 +28,7 @@ require('./database');
 // Settings for the configurations
 app.set('port', process.env.PORT || 3000);
 
-// define the view views lies under src/ folder
+// define where the view are ... lies under src/ folder
 // otherwise default under NOTES-APP
 app.set('views', path.join(__dirname, 'views'));
 
@@ -41,6 +41,8 @@ app.engine('.hbs', exphbs({
     defaultLayout: 'main',
     layoutsDir: path.join(app.get('views'), 'layouts'),
     partialsDir: path.join(app.get('views'), 'partials'),
+    
+    //usersDir: path.join(app.get('views'), 'users'),
     extname: '.hbs'
   }));
 
@@ -78,4 +80,3 @@ app.use(require('./routes/users'));
 // static files
 // define where is the public folder
 app.use(express.static(path.join(__dirname, 'public')));
-
