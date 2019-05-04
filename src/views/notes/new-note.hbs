@@ -1,3 +1,22 @@
+
+
+<!-- validate if errors exists 
+     Attention: the alerts cannot be closed if we do not have
+     import the bootstrap JS in the file main.hbs
+-->
+
+{{#each errors}}
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+
+    <strong> {{text}} </strong> 
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    </div>
+{{/each}}
+
+
+
 <!-- create new notes with bootstrap card -->
 
 <!-- mx-auto to center the card -->
