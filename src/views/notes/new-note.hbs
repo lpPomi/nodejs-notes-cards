@@ -1,0 +1,40 @@
+<!-- create new notes with bootstrap card -->
+
+<!-- mx-auto to center the card -->
+<div class="col-md-4 mx-auto">
+
+    <div class="card" style="background-color:cadetblue; border-color:darkblue;">
+
+        <div class="card-header">
+            <h2>New Note</h2>
+        </div>
+
+        <div class="card-body">
+            <!-- form-action define where the data from this form is delivered to a view from the backend server .. here express 
+            the view that get the data is located in /notes/new-note.hbs
+            and the route is define in the file routes/notes.js
+            -->
+            <form action="/notes/new-note" method="POST">
+                <!-- the bootstrap form to input the notes title -->
+                <div class="form-group">
+                    <input type="text" name="title" class="form-control" placeholder="Title" autofocus>
+                </div>
+
+                <!-- the bootstrap form to input the notes description -->
+                <div class="form-group">
+                    <textarea class="form-control" name="description"  rows="3" placeholder="Description"></textarea>
+                </div>
+                
+                <!-- the bootstrap form to submit the form event -->
+                <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block">
+                    Save
+                </button>
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+
+</div>
